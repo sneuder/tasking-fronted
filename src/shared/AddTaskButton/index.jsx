@@ -2,7 +2,7 @@ import { AddButton, IconPlus } from "./elements";
 
 const AddTaskButton = () => {
   return (
-    <AddButton>
+    <AddButton type="submit">
       <IconPlus />
     </AddButton>
   );
