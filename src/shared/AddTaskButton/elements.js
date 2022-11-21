@@ -8,7 +8,6 @@ import { FiPlus } from "react-icons/fi";
 const AddButton = styled.button`
   ${SizeAddButton}
   ${centerElements}
-  margin: 50px;
   background: linear-gradient(to bottom left, #d955c4, #fd8b8e);
 `;
 
