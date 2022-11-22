@@ -40,7 +40,7 @@ const UserAvatar = styled.img``;
 
 // Content
 
-const linkSection = styled.a``;
+const LinkSection = styled.a``;
 
 export {
   NavbarWrapper,
@@ -52,5 +52,5 @@ export {
   SearchIcon,
   NotificationIcon,
   UserAvatar,
-  linkSection,
+  LinkSection,
 };
