@@ -6,7 +6,7 @@ import { HiMenu } from "react-icons/hi";
 import { MdFolder } from "react-icons/md";
 import { BsFillGrid1X2Fill } from "react-icons/bs";
 import { FaRegBell } from "react-icons/fa";
-import { IoSearch } from "react-icons/io";
+import { IoSearch } from "react-icons/io5";
 
 const NavbarWrapper = styled.nav`
   background-color: ${colors.lightDark};
