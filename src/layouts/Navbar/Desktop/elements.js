@@ -19,7 +19,6 @@ const NavbarWrapper = styled.nav`
 `;
 
 const NavbarItems = styled.div`
-  background-color: red;
   width: 10px;
   height: 100%;
 `;
@@ -37,6 +36,8 @@ const SearchIcon = styled(IoSearch)``;
 
 const NotificationIcon = styled(FaRegBell)``;
 
+const UserAvatar = styled.img``;
+
 // Content
 
 const linkSection = styled.a``;
@@ -50,5 +51,6 @@ export {
   CollectionsIcon,
   SearchIcon,
   NotificationIcon,
+  UserAvatar,
   linkSection,
 };
