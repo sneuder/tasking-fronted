@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import { SizeIconsNavbar, SizeIconsUser } from "../../../styles/sizesElements";
 import colors from "../../../styles/colors";
 
 import { HiMenu } from "react-icons/hi";
@@ -19,28 +20,53 @@ const NavbarWrapper = styled.nav`
 `;
 
 const NavbarItems = styled.div`
-  width: 10px;
   height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
 `;
 
-const NavbarItem = styled.div``;
+const NavbarItem = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+`;
 
 // Icons
-const BurguerMenu = styled(HiMenu)``;
+const BurguerMenu = styled(HiMenu)`
+  ${SizeIconsNavbar(26)}
+`;
 
-const DashboardIcon = styled(BsFillGrid1X2Fill)``;
+const DashboardIcon = styled(BsFillGrid1X2Fill)`
+  ${SizeIconsNavbar(16)}
+`;
 
-const CollectionsIcon = styled(MdFolder)``;
+const CollectionsIcon = styled(MdFolder)`
+  ${SizeIconsNavbar(24)}
+`;
 
-const SearchIcon = styled(IoSearch)``;
+const SearchIcon = styled(IoSearch)`
+  ${SizeIconsUser}
+`;
 
-const NotificationIcon = styled(FaRegBell)``;
+const NotificationIcon = styled(FaRegBell)`
+  ${SizeIconsUser}
+`;
 
-const UserAvatar = styled.img``;
+const UserAvatar = styled.img`
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+`;
 
 // Content
 
-const LinkSection = styled.a``;
+const LinkSection = styled.a`
+  color: ${colors.desacGrey};
+`;
 
 export {
   NavbarWrapper,
