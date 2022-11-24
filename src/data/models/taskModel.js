@@ -1,10 +1,18 @@
-function TaskModel(id, description) {
-  const id = id;
-  let description = description;
+function TaskModel(idTask, descriptionTask) {
+  const id = idTask;
+  let description = descriptionTask;
   let completed = false;
 
   const subTasks = [];
   const completedSubTasks = [];
+
+  function getTaskId() {
+    return id;
+  }
+
+  function getDescription() {
+    return description;
+  }
 
   function completeTask() {
     completed = true;
@@ -16,18 +24,18 @@ function TaskModel(id, description) {
 
   function addSubtask(id, description) {
     const subTask = new TaskModel(id, description);
-    this.subTasks.shift(subTask);
+    subTasks.shift(subTask);
   }
 
   function removeSubtask(idSubTask) {
-    this.subTasks = this.subTasks.filter((subTask) => subTask.id !== idSubTask);
+    subTasks = subTasks.filter((subTask) => subTask.getTaskId() !== idSubTask);
   }
 
   function completeSubTask(idSubtask) {
-    this.subTasks = this.subTasks.map((subTask) => {
-      if (subTask.id === idSubtask) {
+    subTasks = this.subTasks.map((subTask) => {
+      if (subTask.getTaskId === idSubtask) {
         subTask.completeTask();
-        this.completedSubTasks.push();
+        completedSubTasks.push();
       }
     });
   }
