@@ -6,19 +6,17 @@ function CollectionModel(collectionName) {
   let name = collectionName;
   const tasks = [];
 
-  function getIdCollection() {
+  this.getIdCollection = () => {
     return id;
-  }
+  };
 
-  function addTask(description) {
+  this.addTask = (description) => {
     const task = new TaskModel(uuidv4(), description);
-  }
+  };
 
-  function removeTask(taskId) {
+  this.removeTask = (taskId) => {
     tasks = tasks.filter((task) => task !== taskId);
-  }
+  };
 }
 
-const newModel = new CollectionModel(55);
-console.log(newModel);
 export default CollectionModel;

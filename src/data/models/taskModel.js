@@ -6,39 +6,39 @@ function TaskModel(idTask, descriptionTask) {
   const subTasks = [];
   const completedSubTasks = [];
 
-  function getTaskId() {
+  this.getTaskId = () => {
     return id;
-  }
+  };
 
-  function getDescription() {
+  this.getDescription = () => {
     return description;
-  }
+  };
 
-  function completeTask() {
+  this.completeTask = () => {
     completed = true;
-  }
+  };
 
-  function uncompleteTask() {
+  this.uncompleteTask = () => {
     completed = false;
-  }
+  };
 
-  function addSubtask(id, description) {
+  this.addSubtask = (id, description) => {
     const subTask = new TaskModel(id, description);
     subTasks.shift(subTask);
-  }
+  };
 
-  function removeSubtask(idSubTask) {
+  this.removeSubtask = (idSubTask) => {
     subTasks = subTasks.filter((subTask) => subTask.getTaskId() !== idSubTask);
-  }
+  };
 
-  function completeSubTask(idSubtask) {
+  this.completeSubTask = (idSubtask) => {
     subTasks = this.subTasks.map((subTask) => {
       if (subTask.getTaskId === idSubtask) {
         subTask.completeTask();
         completedSubTasks.push();
       }
     });
-  }
+  };
 }
 
 export default TaskModel;
