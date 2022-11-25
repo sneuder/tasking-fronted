@@ -4,20 +4,19 @@ import CollectionModel from "../data/models/collectionModel";
 
 const useCollection = () => {
   const inputCollection = useRef(null);
-  const { handleSetCollection, collection } = useContext(CollectionsContext);
-
-  console.log(collection);
+  const { collections, handleSetCollection } = useContext(CollectionsContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const collectionName = inputCollection.current.value.trim();
     if (collectionName === "") return;
 
-    // const collection = new CollectionModel(collectionName);
-    handleSetCollection(collection + 1);
+    const newCollection = new CollectionModel(collectionName);
+    handleSetCollection(newCollection);
   };
 
   return {
+    collections,
     handleSubmit,
     inputCollection,
   };
