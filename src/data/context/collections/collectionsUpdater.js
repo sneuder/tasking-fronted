@@ -14,8 +14,16 @@ const CollectionsUpdater = () => {
     setCollections([newCollection, ...collections]);
   };
 
+  const handleSetTask = (oldCollection, newTask) => {
+    setCollections([
+      ...collections,
+      { ...oldCollection, tasks: [newTask, ...oldCollection.tasks] },
+    ]);
+  };
+
   return {
     handleSetCollection,
+    handleSetTask,
     collections,
   };
 };
