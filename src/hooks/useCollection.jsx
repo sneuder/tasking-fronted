@@ -1,14 +1,16 @@
-import { useRef, useContext } from "react";
+import { useContext } from "react";
+import { useForm } from "react-hook-form";
+
 import CollectionsContext from "../data/context/collections/collectionsContext";
 import CollectionModel from "../data/models/collectionModel";
 
 const useCollection = () => {
-  const inputCollection = useRef(null);
+  const { register, handleSubmit } = useForm();
+
   const { collections, handleSetCollection } = useContext(CollectionsContext);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const collectionName = inputCollection.current.value.trim();
+  const handleCollection = (data) => {
+    const { collectionName } = data;
     if (collectionName === "") return;
 
     const newCollection = new CollectionModel(collectionName);
@@ -17,8 +19,9 @@ const useCollection = () => {
 
   return {
     collections,
+    handleCollection,
     handleSubmit,
-    inputCollection,
+    register,
   };
 };
 
